@@ -31,8 +31,36 @@ class Square extends Rectangle {
 }
 
 /* Be creative with this one! */
-class Person {
 
+//I am not sure if i did this right
+class Person {
+  static #allPeople = [];
+
+  constructor(name, age, height) {
+    this.name = name
+    this.age = age
+    this.height = height
+    Person.#allPeople.push(this);
+  }
+  setName() {
+    let name = this.name
+  }
+
+  changeName(newName) {
+    return this.name = newName
+  }
+
+  getName() {
+    return this.name
+  }
+
+  static getAllPeople() {
+    return [...Person.#allPeople];
+  }
+
+  static findBy(name) {
+    return Person.#allPeople.find((person) => person.name === name);
+  }
 }
 
 module.exports = {
