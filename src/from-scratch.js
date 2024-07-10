@@ -12,9 +12,8 @@ class Quadrilateral {
 
 class Rectangle extends Quadrilateral {
   constructor(side1, side2) {
-    super(side1, side2)
-    this.side3 = side1
-    this.side4 = side2
+    super(side1, side2, side1, side2) // why we do this? 
+
   }
   getArea() {
     return this.side1 * this.side2
@@ -23,13 +22,11 @@ class Rectangle extends Quadrilateral {
 
 class Square extends Rectangle {
   constructor(side1) {
-    super(side1)
-    this.side2 = side1
-    this.side3 = side1
-    this.side4 = side1
+    super(side1, side1, side1, side1)
+
   }
   getDiagonal() {
-    return Math.sqrt(this.getArea())
+    return Math.sqrt(this.getArea() * 2)
   }
 }
 
